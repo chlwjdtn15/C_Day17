@@ -5,6 +5,7 @@
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0
+#define SIZE 3 // 수정 불가
 // 수정가능지역 시작
 
 // struct Person {
@@ -47,25 +48,62 @@ int main(void) {
   //=====================================================================================//
 
 
-  typedef enum { false, true } bool;
+  // typedef enum { false, true } bool;
 
-  typedef struct Person {
+  // typedef struct Person {
 
-    char* name;
-  } Person;
+  //   char* name;
+  // } Person;
 
 
-  bool b = false;
-  b = true;
+  // bool b = false;
+  // b = true;
 
-  if ( true && b ) {
-    printf("참!\n");
+  // if ( true && b ) {
+  //   printf("참!\n");
+  // }
+
+  // Person p1;
+  // p1.name = "홍길동";
+  // printf("이름 : %s\n", p1.name);
+
+//======================================================================================//
+// 문제 : 몇명의 사람의 나이를 받을지 입력받고 입력받은 수 만큼 나이를 입력받은 후 저장해주세요.
+// 조건 : malloc을 사용할 수 없습니다.
+// 출력예시
+/*
+사람의 숫자를 입력해주세요. : 7[엔터]
+3 이하로 입력해주세요.
+사람의 숫자를 입력해주세요. : 4[엔터]
+3 이하로 입력해주세요.
+사람의 숫자를 입력해주세요. : 100[엔터]
+3 이하로 입력해주세요.
+사람의 숫자를 입력해주세요. : 2[엔터]
+1번째 사람의 나이를 입력해주세요 : 33[엔터]
+2번째 사람의 나이를 입력해주세요 : 50[엔터]
+1번째 사람의 나이 : 33
+2번째 사람의 나이 : 50
+*/
+  int ages[SIZE]; // 수정 불가
+  
+  int people_num;
+  int age;
+
+    scanf("사람의 숫자를 입력해주세요. : %d", &people_num);
+
+    if (people_num > 3) {
+      printf("3 이하로 입력해주세요\n");
+
+      people_num = 0;
+    }else {
+      for (int i = 0; i <= people_num; i++) {
+
+        scanf("%d 번째 사람의 나이를 입력해주세요 : %d", i, &age);
+        
+
+
+      }
   }
-
-  Person p1;
-  p1.name = "홍길동";
-  printf("이름 : %s\n", p1.name);
-
   
 
   return 0;
