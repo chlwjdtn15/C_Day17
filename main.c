@@ -3,7 +3,8 @@
 // 힌트 : 포인터 변수에 NULL 을 넣으면 아무것도 안가리킨다는 뜻 입니다.
 
 #include <stdio.h>
-
+#define TRUE 1
+#define FALSE 0
 // 수정가능지역 시작
 
 // struct Person {
@@ -44,6 +45,15 @@ int main(void) {
 
 
   //=====================================================================================//
+
+
+  typedef enum { false, true } bool;
+
+  typedef struct Person {
+
+    char* name;
+  } Person;
+
 
   bool b = false;
   b = true;
